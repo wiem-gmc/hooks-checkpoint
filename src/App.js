@@ -1,25 +1,37 @@
-import logo from './logo.svg';
 import './App.css';
+// import Modal from "react-bootstrap/Modal";
+import "bootstrap/dist/css/bootstrap.min.css";
 
-function App() {
-  return (
-    <div className="App">
+import { Component } from 'react';
+import MovieList from './components/MovieList';
+
+// import MovieList from './MovieList'
+// import movieCard from MovieCard;
+
+
+
+// const A = () => {
+//   return (
+//     <Modal show={true}>
+//       <Modal.Header>Hi</Modal.Header>
+//       <Modal.Body>asdfasdf</Modal.Body>
+//       <Modal.Footer>This is the footer</Modal.Footer>
+//     </Modal>
+//   );
+// };
+class App extends Component{
+    
+  render()
+  
+  {
+    return (
+    <div className="App AppMovie">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <MovieList/>     
+
       </header>
     </div>
   );
 }
-
+}
 export default App;
