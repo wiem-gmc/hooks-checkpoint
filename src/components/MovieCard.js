@@ -1,10 +1,13 @@
 import React from 'react'
 import {Card} from 'react-bootstrap'
 import '../App.css';
+import {Link} from 'react-router-dom'
+
 const MovieCard = ({movie}) => {
 
     return (
         <div className="card">
+          {/* <Route path="/:id"component={Details}/> */}
     <Card >
   <Card.Img variant="top" src={movie.img}/>
   <Card.Body className="mcard">
@@ -15,13 +18,14 @@ const MovieCard = ({movie}) => {
     {movie.year}
 
     </Card.Text>
-    <button variant="primary">Go somewhere</button>
+    <Link to={`/${movie.id}`} style={{fontSize:'85%',marginLeft:'5%'}}>
+    <button variant="primary">More Details</button></Link>
   </Card.Body>
   
 </Card>
 
 
-<div>
+<div style={{display:'flex', justifyContent:'center', marginBottom:'5%', marginTop:'5%'}}>
 {
     [1,2,3,4,5].map( el => (
     
@@ -30,6 +34,7 @@ const MovieCard = ({movie}) => {
     <i key={el} class="fas fa-star" style={{color:"yellow"}}></i> : <i  key={el} class="fas fa-star"></i>  ) )
 
     }
+    <Link to='/nav' style={{fontSize:'85%',marginLeft:'5%'}}>More Details</Link>
     </div>
 
 

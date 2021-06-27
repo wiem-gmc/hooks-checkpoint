@@ -3,8 +3,11 @@ import MovieCard from './MovieCard';
 import '../App.css'
 import{useState} from 'react'
 import AddModal from './AddModal'
-const MovieList = () => {
+// import Data from './Data'
 
+
+const MovieList = (props) => {
+    console.log(props)
     const [movies, setMovies]= useState(data)
     const [isOpen, setIsOpen]= useState(false)
     const closeModal= ()=>setIsOpen(false)
@@ -12,6 +15,8 @@ const MovieList = () => {
     const [filter, setFilter]=useState('')
     const [rate, setRate]=useState(null)
     const showList=movies.filter(el=> rate!==null? el.title.toLowerCase().includes(filter.toLowerCase()) && el.rating === rate:el.title.toLowerCase().includes(filter.toLowerCase()))
+
+  
 
     return (
         <div >
@@ -29,18 +34,20 @@ const MovieList = () => {
 </div>
             <div style={{display:'flex', justifyContent:'center', marginBottom:'2%', marginTop:'2%'}}>
            
-
+            {/* <Data movie={movies}/> */}
             <button onClick={()=> setIsOpen(true)}>Add Movie</button>
             <AddModal isOpen={isOpen} closeModal={closeModal} addMovie={addMovie}/>
             </div>
       <div className="AppMovie" style={{display:"flex" ,justifyContent:"space-around", flexWrap:"wrap", paddingTop:'space-around'}}>
-        {showList.map((el, i) => (<MovieCard movie={el} key={i}/>
+        {showList.map((el, i) => ( <div style={{SmarginBottom:'5%', marginTop:'5%'}} key={i}> <MovieCard movie={el} idd={el.id}/></div> 
         )
         )
         }
-    
+      
        </div>
        </div>
     )
+
 }
+
 export default MovieList

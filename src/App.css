@@ -1,7 +1,7 @@
 .App {
   /* text-align: center; */
-  background-color: #282c34;
-  margin-top: 5%;
+  background-color: #0030087e;
+  /* margin-top: 1%; */
 
  
 
@@ -49,6 +49,11 @@
 /* .App-link {
   color: #61dafb;
 } */
+.nav{
+  background-color: brown;
+  padding-top: 10%;
+  margin-top: 1%;
+}
 
 @keyframes App-logo-spin {
   from {

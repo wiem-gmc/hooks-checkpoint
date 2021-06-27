@@ -21,6 +21,7 @@ function AddModal({isOpen, closeModal, addMovie}){
   const [year, setYear] = useState(null)
   const [img, setImg] = useState('')
   const [rating, setRating] = useState(0)
+  const [video, setVideo]= useState('')
 
     return (
       <div>
@@ -33,9 +34,9 @@ function AddModal({isOpen, closeModal, addMovie}){
 
 <form onSubmit={(e)=>{
   e.preventDefault();
-  addMovie({title,description,img,year,rating})
+  addMovie({title,description,img,year,rating,video})
   closeModal()
-  setTitle(''); setYear(null); setDescription(''); setImg(''); setRating(0)
+  setTitle(''); setYear(null); setDescription(''); setImg(''); setRating(0); setVideo('')
 }
 
 }>
@@ -54,6 +55,10 @@ function AddModal({isOpen, closeModal, addMovie}){
   <div class="form-group">
     <label for="exampleInputEmail4">Movie URL</label>
     <input type="text" class="form-control" id="exampleInputEmail4" aria-describedby="emailHelp" onChange={(e)=>setImg(e.target.value)} placeholder="Enter Movie URL"/>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail4">Video URL</label>
+    <input type="text" class="form-control" id="exampleInputVideo" aria-describedby="emailHelp" onChange={(e)=>setVideo(e.target.value)} placeholder="Enter Movie URL"/>
   </div>
   <div class="form-group">
     <label for="exampleInputEmail5">Movie Rating</label>

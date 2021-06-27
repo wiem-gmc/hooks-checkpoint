@@ -1,24 +1,12 @@
 import './App.css';
-// import Modal from "react-bootstrap/Modal";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import { Component } from 'react';
 import MovieList from './components/MovieList';
-
-// import MovieList from './MovieList'
-// import movieCard from MovieCard;
-
+import {Route, Switch} from 'react-router-dom'
+import Navbar from './components/NavBar';
 
 
-// const A = () => {
-//   return (
-//     <Modal show={true}>
-//       <Modal.Header>Hi</Modal.Header>
-//       <Modal.Body>asdfasdf</Modal.Body>
-//       <Modal.Footer>This is the footer</Modal.Footer>
-//     </Modal>
-//   );
-// };
 class App extends Component{
     
   render()
@@ -27,8 +15,12 @@ class App extends Component{
     return (
     <div className="App AppMovie">
       <header className="App-header">
-        <MovieList/>     
-
+       
+        <Switch>
+          <Route path='/' exact component={MovieList}/>
+          <Route path= '/:id' component={Navbar}/>
+        
+        </Switch>
       </header>
     </div>
   );
